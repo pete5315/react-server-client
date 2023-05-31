@@ -1,12 +1,22 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
+import './App.css';
+import axios from 'axios';
 
-function App () {
- 
-  const [creatureList, setCreatureList] = useState([
-    {name :'Unicorn', origin: 'Britain'},
-    {name : 'Sphinx', origin: 'Egypt'},
-    {name: 'Jackalope', origin: 'America'}
-  ]);
+function App() {
+  const [creatureList, setCreatureList] = useState([]);
+
+  const fetchCreatures = () => {
+    axios({
+      method : 'GET',
+      url: '/creature'
+    }).then( response => {
+      console.log(response);
+    }).catch( (err) => {
+      console.log(err);
+    })
+  }
+
+  
   
   return (
     <div>
