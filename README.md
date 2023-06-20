@@ -1,3 +1,5 @@
+In class assignment to practice using React with the full stack.
+
 # Full Stack React
 
 ## Setup
